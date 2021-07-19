@@ -30,8 +30,8 @@ function getUserInfo() {
             if (res.status !== 0) {
                 return layer.msg('获取用户信息失败')
             }
-            renderAvatar(res.data) //渲染用户头像
-            console.log(res);
+            renderAvatar(res.data) //渲染用户头像，欢迎文本
+
         },
         //不论成功还是失败，都会调用,写在baseAPI里了
         // complete: function(res) {
@@ -50,7 +50,7 @@ function getUserInfo() {
 function renderAvatar(user) {
     //1.获取用户名称
     var name = user.nickname || user.username;
-    console.log(name);
+
     //2.设置欢迎文本
     $('.welcome').html('欢迎&nbsp;&nbsp' + name);
     //3.按需渲染用户头像
